@@ -1,6 +1,6 @@
 # Look at our mouth-watering menu!! 
 
-I create a menu website using a API and the React library.
+I create a menu page using a API and the React library.
 
 # Skill I will showcase:
 
