@@ -1,6 +1,6 @@
 # Look at our mouth-watering menu!! 
 
-I create a menu website using a API and the React library.
+I create a menu page using a API and the React library.
 
 # Skill I will showcase:
 
@@ -10,4 +10,6 @@ I create a menu website using a API and the React library.
             - Implementing Bootstrap (Importing)
     - API Rendering using Axios 
 
-![](./img/guyOrderOffMenu.webp)
+
+  ![](./img/guyOrderOffMenu.webp)
+
