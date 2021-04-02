@@ -1,59 +1,43 @@
-import React, {Component} from 'react'
-import axios from 'axios'
+import React, { Component } from "react";
+import axios from "axios";
+import Item from "./Item";
 
+export class Menu extends Component {
+  constructor(props) {
+    super();
 
-export class Menu extends Component  {
-    constructor(props){
+    this.state = {
+      items: [],
+    };
+  }
+  componentDidMount() {
+    let apiURLItems = `http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/items/42`;
 
-        super();
+    let this_ = this;
 
-        this.state = {
-            menu: ''
+    axios
+      .get(apiURLItems)
 
-        }
+      .then(function (response) {
+        this_.setState({ items: response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
+  render() {
+    const mapHelper = (item,index) => {
+        return(
+        <Item
+        item={item}
+        index={index}
+        key={index}
+        />
+        )
+    };
 
-    }
-
-    componentDidMount(){
-
-        let apiURL = `http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/sections`
-
-        let this_ = this
-
-        const axiosData =  axios.get(apiURL)
-
-            .then(function(response){
-
-                console.log('line 15, in cdm axios call ',response.data);
-                return response.data
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-            console.log(axiosData);
-
-        this.setState({menu: axiosData})
-    }
-
-    render() {
-
-       
-        return (
-
-
-            <div>
-
-            </div>
-
-
-
-
-           
-        );
-
-        
-    }
-
+    return <div>{this.state.items.map(mapHelper)}</div>;
+  }
 }
-export default Menu
+export default Menu;

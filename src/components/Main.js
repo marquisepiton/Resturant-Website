@@ -14,7 +14,6 @@ function Main() {
     <p>Quick....Easy....Delicious!</p>
 
     <a href="www.google.com"><p>CLICK HERE TO PLACE YOUR ORDER</p></a>
-
     <Menu/>
     </div>
   );
